@@ -273,17 +273,21 @@ document.addEventListener("DOMContentLoaded", () => {
     "https://twitter.com/AndroidPeterson/status/76368147992682497",
     "https://twitter.com/AndroidPeterson/status/76363454323232768",
     "https://twitter.com/AndroidPeterson/status/76345260212621312",
-    "https://twitter.com/AndroidPeterson/status/76388329276440576",
-    "https://twitter.com/AndroidPeterson/status/612481846497742848",
-    "https://twitter.com/AndroidPeterson/status/612485789982617606",
-    "https://twitter.com/AndroidPeterson/status/678946612231542688",
-    "https://twitter.com/AndroidPeterson/status/678939612885785601",
-    "https://twitter.com/AndroidPeterson/status/778188254525278209",
-    "https://twitter.com/AndroidPeterson/status/778188254235278208",
+    "https://twitter.com/AndroidPeterson/status/76388329276440576"
   ];
 
-  const viewedTweetsSet = new Set();
-  const tweetDiv = document.getElementById("display-button");
+  let unshownTweets = [...tweets]; // Tracks tweets not yet shown
+  const tweetDisplay = document.getElementById("tweet-display");
+  const nextTweetButton = document.getElementById("display-button");
 
-  tweetDiv.addEventListener("click", () => {});
+  nextTweetButton.addEventListener("click", () => {
+    if (unshownTweets.length === 0) {
+      unshownTweets = [...tweets]; // Reset the list once all are shown
+    }
+
+    const randomIndex = Math.floor(Math.random() * unshownTweets.length);
+    const tweet = unshownTweets.splice(randomIndex, 1)[0]; // Get and remove the tweet
+
+    tweetDisplay.innerHTML = `<a href="${tweet}" target="_blank">${tweet}</a>`;
+  });
 });
