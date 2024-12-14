@@ -4,9 +4,10 @@ body {
   background-color: #000; /* Black background */
   color: #ffa500; /* Orange text */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .container {
@@ -36,4 +37,14 @@ button:hover {
   margin-top: 20px;
   color: #fff;
   text-align: center;
+}
+
+footer {
+  margin-top: auto;
+  padding: 10px;
+  text-align: center;
+  color: #ffa500;
+  background-color: #000;
+  width: 100%;
+  position: relative;
 }
