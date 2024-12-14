@@ -6,38 +6,61 @@
     <title>Receive Wisdom from AndroidPeterson</title>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <style>
+        /* General body styling */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
+            background-color: #000; /* Black background */
+            color: #ffa500; /* Orange text color */
         }
 
+        /* Header styling */
         h1 {
-            color: #333;
+            color: #ffa500; /* Orange text for header */
+            margin-bottom: 30px;
         }
 
+        /* Button styling */
         #show-tweet-button {
-            background-color: #007bff;
-            color: white;
+            background-color: #ffa500; /* Orange background */
+            color: #000; /* Black text */
             border: none;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
             border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
         #show-tweet-button:hover {
-            background-color: #0056b3;
+            background-color: #ff8c00; /* Darker orange on hover */
         }
 
+        /* Tweet display container */
         #tweet-display {
             margin-top: 20px;
+            display: flex;
+            justify-content: center; /* Centers the tweet horizontally */
+            align-items: center; /* Centers the tweet vertically within the div */
+            min-height: 200px; /* Ensures space is reserved for the tweet */
         }
 
+        /* Footer styling */
         footer {
             margin-top: 50px;
-            color: #666;
+            color: #ffa500; /* Orange text */
             font-size: 14px;
+        }
+
+        /* Link styling */
+        a {
+            color: #ffa500; /* Orange links */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -359,6 +382,7 @@
             // Create and embed tweet iframe
             const tweetEmbed = document.createElement('blockquote');
             tweetEmbed.className = 'twitter-tweet';
+            tweetEmbed.style.margin = '0 auto'; // Center alignment for the blockquote
             tweetEmbed.innerHTML = `<a href="${tweetURL}"></a>`;
 
             tweetDisplay.appendChild(tweetEmbed);
